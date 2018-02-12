@@ -9,3 +9,10 @@ Author: Shifter Team
 Author URI: https://getshifter.io
 License: GPL2
 */
+
+
+/**
+ * Contact Form 7
+ */
+
+require_once('lib/contact-form-7/contact-form-7.php');
