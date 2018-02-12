@@ -1,20 +1,5 @@
 <?php
 
-/*
- * Conditionally Load CF7 Scripts
- */
-
-add_filter( 'wpcf7_load_js', '__return_false' );
-add_filter( 'wpcf7_load_css', '__return_false' );
-
-if ( function_exists( 'wpcf7_enqueue_scripts' ) ) {
-  wpcf7_enqueue_scripts();
-}
-
-if ( function_exists( 'wpcf7_enqueue_styles' ) ) {
-  wpcf7_enqueue_styles();
-}
-
 require_once WP_CONTENT_DIR . '/plugins/contact-form-7/wp-contact-form-7.php';
 
 class SLS_FORMS_CF7_BASIN extends WPCF7_Service {
