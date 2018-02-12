@@ -37,7 +37,7 @@ class SLS_FORMS_CF7_BASIN extends WPCF7_Service {
 	public function icon() {
 		$icon = sprintf(
 			'<img src="%1$s" alt="%2$s" width="%3$d" height="%4$d" class="icon" />',
-			plugins_url('shifter-sls-forms/assets/images/shifter-icon.png'),
+			'https://avatars3.githubusercontent.com/u/22144656?s=200&v=4',
 			esc_attr( __( 'Shifter Logo', 'contact-form-7' ) ),
 			36, 36 );
 		echo $icon;
