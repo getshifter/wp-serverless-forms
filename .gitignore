@@ -1,0 +1,10 @@
+# Theme
+error_log
+bower_components
+node_modules
+npm-debug.log
+
+# Assets
+src
+assets/config/mainfest.json
+mainfest.json
