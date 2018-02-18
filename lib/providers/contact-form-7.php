@@ -3,6 +3,11 @@
 /**
 * WP Serverless Forms
 * Provider: Contact Form 7
+*
+*/
+
+/**
+* Swap CF7 Action URL with Custom Endpoint
 */
 
 $endpoint = get_option('wp_sls_forms_endpoint');
@@ -15,10 +20,8 @@ if ( isset( $endpoint ) ) {
   }
 }
 
+/**
+ * Disable CF7 AJAX
+ */
 
-function cf7_dequeue_script() {
-  global $wp_scripts;
-  wp_dequeue_script( 'contact-form-7' );
-}
-
-add_action( 'wp_print_footer_scripts', 'cf7_dequeue_script', 8 );
+add_filter( 'wpcf7_load_js', '__return_false' );

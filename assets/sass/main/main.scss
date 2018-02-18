@@ -1,0 +1,71 @@
+// MAIN.SCSS
+// ---------
+
+// BRAND COLORS
+// =============================================================================
+
+$brand-color: #bc4e9c;
+
+$purple: $brand-color;
+$magenta: #f80759;
+
+
+// ADMIN NAV
+// =============================================================================
+
+#shifter-support-top-menu:before {
+  vertical-align: middle;
+  content: url("./../../dist/images/shifter-icon.png");
+}
+
+td.shifter-support-url {
+  word-break: break-all;
+}
+
+th.shifter-diag, td.shifter-diag {
+  border-bottom: 1px solid #ddd;
+}
+
+tr.shifter-diag {
+  background-color: $purple;
+  color: white;
+  padding: 4px;
+}
+
+td.shifter-support-version {
+  width: 7em;
+}
+
+.shifter-support-diag-content {
+  display: none;
+}
+
+.shifter-support-diag-content:target {
+  display: block;
+}
+
+.disable_shifter_operation {
+  color: lightgray;
+}
+
+.system-report-nav {
+  margin-bottom: 10px;
+}
+
+.shifter-debug-meta {
+  display: none;
+  overflow: hidden;
+  height: 0;
+}
+
+.shifter-support-diag {
+  table {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  pre {
+    overflow: scroll;
+    padding: 8px;
+  }
+}

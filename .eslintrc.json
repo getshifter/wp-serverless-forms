@@ -1,0 +1,20 @@
+{
+  "env": {
+    "browser": true,
+    "jquery": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+        "jsx": true
+    }
+  },
+  "rules": {
+    "semi": ["off"]
+  },
+  "globals": {
+    "jQuery": true,
+    "$": true
+  }
+}

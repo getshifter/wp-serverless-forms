@@ -1,0 +1,74 @@
+{
+  "name": "shifter-support-plugin",
+  "version": "1.1.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "postinstall": "./node_modules/gulp/bin/gulp.js",
+    "build": "./node_modules/gulp/bin/gulp.js",
+    "build:production": "./node_modules/gulp/bin/gulp.js --production",
+    "start": "./node_modules/gulp/bin/gulp.js serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getshifter/shifter-support-plugin.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/getshifter/shifter-support-plugin/issues"
+  },
+  "homepage": "https://github.com/shifter-support-plugin#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babelify": "^8.0.0",
+    "browser-sync": "2.23.6",
+    "browserify": "^15.2.0",
+    "browserify-shim": "^3.8.14",
+    "del": "3.0.0",
+    "gulp": "3.9.1",
+    "gulp-autoprefixer": "4.1.0",
+    "gulp-babel": "^7.0.0",
+    "gulp-changed": "3.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "2.1.2",
+    "gulp-eslint": "^4.0.0",
+    "gulp-flatmap": "1.0.2",
+    "gulp-group-css-media-queries": "1.2.0",
+    "gulp-if": "2.0.2",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-load-plugins": "1.5.0",
+    "gulp-plumber": "1.2.0",
+    "gulp-rename": "1.2.2",
+    "gulp-rev": "8.1.1",
+    "gulp-sass": "3.1.0",
+    "gulp-sequence": "^1.0.0",
+    "gulp-sourcemaps": "2.6.4",
+    "gulp-uglify": "3.0.0",
+    "gulp-util": "3.0.8",
+    "imagemin-gifsicle": "^5.2.0",
+    "imagemin-jpegtran": "^5.0.2",
+    "imagemin-optipng": "^5.2.1",
+    "lodash": "^4.17.4",
+    "run-sequence": "^2.2.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^2.0.0",
+    "watchify": "^3.9.0",
+    "yargs": "11.0.0"
+  },
+  "dependencies": {
+    "clipboard-copy": "^1.4.2",
+    "jquery": "^3.1.1",
+    "sweetalert2": "^7.11.0"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "jquery": "global:$"
+  }
+}
