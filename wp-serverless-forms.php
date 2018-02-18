@@ -33,14 +33,19 @@ function wp_sls_forms() {
  */
 
 function wp_sls_forms_js() {
-  $shifter_js = plugins_url( 'src/js/app.js', __FILE__ );
+	$asset_dir = '/src/';
+	$asset_src_path = dirname(__FILE__) . $asset_dir;
+	if (realpath($asset_src_path)) {
+		$shifter_js = plugins_url( 'src/js/app.js', __FILE__ );
+	} else {
+		$shifter_js = plugins_url( 'dist/js/app.min.js', __FILE__ );
+	}
+
   wp_register_script("wp-sls-forms-js", $shifter_js, array( 'jquery' ));
-  wp_localize_script('wp-sls-forms-js', 'ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
   wp_enqueue_script("wp-sls-forms-js");
 }
 
 add_action('wp_enqueue_scripts', 'wp_sls_forms_js' );
-add_action('admin_enqueue_scripts', 'wp_sls_forms_js' );
 
 
 /**
