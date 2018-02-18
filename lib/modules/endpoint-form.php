@@ -6,13 +6,13 @@
 	<h2 class="title">HTTP Endpoint</h2>
   <p>Add your HTTP endpoint from providers such as <a href="https://usebasin.com">Basin</a>, <a href="https://formkeep.com">FormKeep</a>, <a href="https://formspree.io/">Formspree </a> and more to begin using SLS Forms.</p>
   <form method="post" action="options.php">
-      <?php settings_fields( 'sls-forms-settings-group' ); ?>
-      <?php do_settings_sections( 'sls-forms-settings-group' ); ?>
+      <?php settings_fields( 'wp-sls-forms-settings-group' ); ?>
+      <?php do_settings_sections( 'wp-sls-forms-settings-group' ); ?>
       <table class="form-table">
         <tr valign="top">
         <th scope="row">Endpoint:</th>
         <td>
-          <input name="sls_forms_ext_endpoint" type="url" aria-describedby="serverless-forms-endpoint-url" value="<?php echo get_option( 'sls_forms_ext_endpoint' ); ?>" class="regular-text code">
+          <input name="wp_sls_forms_endpoint" type="url" aria-describedby="serverless-forms-endpoint-url" value="<?php echo get_option( 'wp_sls_forms_endpoint' ); ?>" class="regular-text code">
         </td>
         </tr>
       </table>

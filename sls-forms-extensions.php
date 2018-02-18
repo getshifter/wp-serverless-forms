@@ -1,7 +1,7 @@
 <?php
 /*
-Plugin Name: SLS Forms — Extensions
-Plugin URI: https://github.com/getshifter/sls-forms-extensions
+Plugin Name: WP Serverless Forms
+Plugin URI: https://github.com/getshifter/wp-serverless-forms
 Description: Extensions for forms for Serverless Static WordPress sites
 Version: 1.0.0
 Author: Shifter Team
@@ -13,21 +13,20 @@ License: GPL2
  * Admin Settings Menu
  */
 
-add_action( 'admin_menu', 'sls_forms_extensions' );
+add_action( 'admin_menu', 'wp_sls_forms' );
 
-function sls_forms_extensions() {
+function wp_sls_forms() {
 	add_options_page(
-		'SLS Forms — Extensions',
-		'SLS Forms',
+		'WP Serverless Forms',
+		'WP Serverless Forms',
 		'manage_options',
-		'sls-forms-extensions',
-		'sls_forms_ext_options',
-    'https://placehold.it/100x100'
+		'wp-sls-forms',
+		'wp_sls_forms_options'
 	);
 }
 
 /**
- * SLS Forms — Extensions
+ * WP Serverless Forms
  * Feature: HTTP Endpoint
  */
 

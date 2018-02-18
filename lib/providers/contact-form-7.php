@@ -1,16 +1,16 @@
 <?php
 
 /**
-* SLS Forms — Extensions
+* WP Serverless Forms
 * Provider: Contact Form 7
 */
 
-$endpoint = get_option('sls_forms_ext_endpoint');
+$endpoint = get_option('wp_sls_forms_endpoint');
 
 if ( isset( $endpoint ) ) {
   add_filter('wpcf7_form_action_url', 'wpcf7_custom_form_action_url');
   function wpcf7_custom_form_action_url() {
-    $endpoint = get_option('sls_forms_ext_endpoint');
+    $endpoint = get_option('wp_sls_forms_endpoint');
     return $endpoint;
   }
 }
