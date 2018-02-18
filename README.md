@@ -1,4 +1,4 @@
-# Serverless Forms — Extensions
+# WP Serverless Forms
 
 #### Use WordPress Form plugins like [Contact Form 7](https://contactform7.com) with Serverless Static WordPress sites.
 
