@@ -2,9 +2,9 @@
 /*
 Plugin Name: WP Serverless Forms
 Plugin URI: https://github.com/getshifter/wp-serverless-forms
-Description: Extensions for forms for Serverless Static WordPress sites
+Description: Serverless Forms for Static WordPress sites
 Version: 1.0.0
-Author: Shifter Team
+Author: Shifter
 Author URI: https://getshifter.io
 License: GPL2
 */
