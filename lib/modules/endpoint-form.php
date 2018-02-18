@@ -4,7 +4,7 @@
 <p>Helper tools for Form Plugins while using Serverless Static WordPress Sites.</p>
 <div class="card">
 	<h2 class="title">HTTP Endpoint</h2>
-  <p>Add your HTTP endpoint from providers such as <a href="https://usebasin.com">Basin</a>, <a href="https://formkeep.com">FormKeep</a>, <a href="https://formspree.io/">Formspree </a> and more to begin using SLS Forms.</p>
+  <p>Replace WordPress Plugin form action with providers such as <a href="https://usebasin.com">Basin</a>, <a href="https://formkeep.com">FormKeep</a>, <a href="https://formspree.io/">Formspree</a> and more to begin using WP Serverless Forms.</p>
   <form method="post" action="options.php">
       <?php settings_fields( 'wp-sls-forms-settings-group' ); ?>
       <?php do_settings_sections( 'wp-sls-forms-settings-group' ); ?>
