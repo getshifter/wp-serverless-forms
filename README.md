@@ -1,7 +1,20 @@
 # WP Serverless Forms
 
-#### Use WordPress Form plugins like [Contact Form 7](https://contactform7.com) with Serverless Static WordPress sites.
+Replace PHP form actions with API and WebHook driven services such IFTT, Basin, FormKeep, Formspree, custom Endpoints and more.
 
-This plugin replaces Dynamic PHP Form actions with HTTP Endpoints from provides such as [Basin](https://usebasin.com), [FormKeep](https://formkeep.com), [Formspree](https://formspree.io/), and more!
+Major features in WP Serverless Forms include:
 
-> Currently only supports Contact Form 7
+* Works on both Serverless Static WordPress Sites and Dynamic PHP hosted sites
+* Support for Contact Form 7
+* Works with providers such as IFTT, Basin, FormKeep, Formspree and many more.
+* Supports custom HTTP Endpoints and WebHooks
+
+## Requirements
+
+- Requires at least: 4.8
+- Tested up to: 4.9.4
+- Requires PHP: 5.4
+
+## Installation
+
+Upload WP Serverless Forms to your WordPress site, Activate it, navigate to WP Serverless Forms options under the Admin settings section on your WordPress Dashboard and add your custom HTTP Endpoint.
