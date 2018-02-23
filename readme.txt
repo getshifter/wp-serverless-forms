@@ -1,5 +1,5 @@
 === WP Serverless Forms ===
-Contributors: emaildano, sawanoboly, amimotoami, getshifter
+Contributors: emaildano, sawanoboly, haruharuharuby, amimotoami, getshifter
 Tags: api, mail, http, contact form 7, serverless, webhook, basin, formkeep, cf7
 Requires at least: 4.8
 Tested up to: 4.9.4
