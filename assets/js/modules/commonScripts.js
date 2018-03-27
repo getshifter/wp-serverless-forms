@@ -10,11 +10,13 @@
  *
  */
 
-const wpServerlessFormsCF7 = require('./wp-sls-forms-cf7');
+const wpSlsFormsCF7 = require('./wp-sls-forms-cf7');
+const wpSlsFormsGF = require("./wp-sls-forms-gf");
 
 // This function will fire on init() in app.js
 export function commonInit() {
-  wpServerlessFormsCF7
+  wpSlsFormsCF7,
+  wpSlsFormsGF
 }
 
 // This function will fire on finalize() in app.js

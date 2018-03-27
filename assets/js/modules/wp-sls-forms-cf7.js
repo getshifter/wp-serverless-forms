@@ -9,4 +9,4 @@ import {
 } from './wp-sls-forms';
 
 wpServerlessFormsClass('.wpcf7-form');
-wpServerlessFormsRequied('.wpcf7-form', '.wpcf7-validates-as-required')
+wpServerlessFormsRequied('.wpcf7-form', '[aria-required=true]');

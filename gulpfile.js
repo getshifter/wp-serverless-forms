@@ -11,8 +11,6 @@ const autoprefixSupport = [
    'android 4'
 ];
 
-
-
 /**
  * NPM MODULES
  *
@@ -88,10 +86,6 @@ const assetPath  = {
   img: {
     enter: enter_base + 'images/**/*',
     dest:  dist_base + 'images/',
-  },
-  fonts: {
-    enter: enter_base + 'fonts/**/*',
-    dest:  dist_base + 'fonts/'
   },
   sass: {
     enter: enter_base + 'sass/main/*.scss',
@@ -311,9 +305,6 @@ gulp.task('build_rev', function () {
 });
 
 
-
-
-
 /**
  * IMAGE TASK
  * Process images in src folder, move to dist folder
@@ -336,39 +327,12 @@ gulp.task('build_images', function () {
     .pipe(gulp.dest(assetPath.img.dest));
 });
 
-
-
-
-
-/**
- * COPY STATIC FILES
- *
- * Copy jQuery for local fallback
- * Copy Fonts to distribution folder
- *
- */
-gulp.task('copy_jquery', function() {
-  return gulp.src('./node_modules/jquery/dist/jquery.min.js')
-    .pipe( gulp.dest( assetPath.js.dest ) )
-});
-gulp.task('copy_fonts', function () {
-  return gulp.src( assetPath.fonts.enter ).pipe(gulp.dest(assetPath.fonts.dest));
-});
-
-
-
-
-
 /**
  * WATCH RELATED TASKS
  * Trigger BrowserSync to reload
  *
  */
 gulp.task('watch_reload', function(){ browsersync.reload(); });
-
-
-
-
 
 /**
  * SERVE TASK
@@ -385,7 +349,6 @@ gulp.task('serve', ['build_css', 'watch_bundles'], function(){
 
   // Watch tasks
   gulp.watch([assetPath.sass.enter], ['build_css']);
-  gulp.watch([assetPath.fonts.enter], ['copy_fonts']);
   gulp.watch([assetPath.img.enter], ['build_images']);
   gulp.watch('**/*.php', ['watch_reload']);
   gulp.watch('**/*.html', ['watch_reload']);
@@ -403,6 +366,5 @@ gulp.task('serve', ['build_css', 'watch_bundles'], function(){
 gulp.task('default', ['clean'], sequence(
   ['build_bundles'],
   ['build_css', 'build_images'],
-  ['copy_jquery', 'copy_fonts'],
   ['build_rev']
 ));

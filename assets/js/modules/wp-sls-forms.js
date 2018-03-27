@@ -52,3 +52,21 @@ export function wpServerlessFormsRequied(form, field) {
     }
   );
 }
+
+// Remove GF Validation
+export function wpServerlessFormsSanatize(form, element) {
+
+  jQuery(document).ready(
+    function($) {
+
+      var $form = jQuery(form)
+      var $element = jQuery(element)
+
+      $form.find($element).each(function() {
+        $(this).attr('onclick', null);
+        $(this).attr("onkeypress", null);
+      });
+
+    }
+  );
+}
