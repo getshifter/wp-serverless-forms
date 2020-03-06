@@ -3,7 +3,7 @@
 Plugin Name: WP Serverless Forms
 Plugin URI: https://github.com/getshifter/wp-serverless-forms
 Description: Serverless Forms for Static WordPress sites
-Version: 1.0.0
+Version: 1.1.3
 Author: Shifter
 Author URI: https://getshifter.io
 License: GPL2
