@@ -4,7 +4,7 @@ Tags: api, mail, http, contact form 7, serverless, webhook, basin, formkeep, cf7
 Requires at least: 4.8
 Tested up to: 5.3.2
 Requires PHP: 5.4
-License: GPLv2 or later
+License: GPLv3
 
 Replace PHP form actions with API and WebHook driven services such IFTT, Basin, FormKeep, Formspree, custom Endpoints and more.
 
