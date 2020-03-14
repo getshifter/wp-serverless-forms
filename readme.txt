@@ -1,6 +1,6 @@
 === WP Serverless Forms ===
-Contributors: emaildano, sawanoboly, haruharuharuby, amimotoami, getshifter
-Tags: api, mail, http, contact form 7, serverless, webhook, basin, formkeep, cf7
+Contributors: emaildano, sawanoboly, haruharuharuby, amimotoami, getshifter, hithisisjason
+Tags: api, mail, http, contact form 7, serverless, webhook, basin, formkeep, cf7, gf, gravity forms, jamstack
 Requires at least: 4.8
 Tested up to: 5.3.2
 Requires PHP: 5.4
@@ -15,7 +15,7 @@ Replace PHP form actions with API and WebHook driven services such IFTT, Basin, 
 Major features in WP Serverless Forms include:
 
 * Works on both Serverless Static WordPress Sites and Dynamic PHP hosted sites
-* Support for Contact Form 7
+* Support for Contact Form 7, Gravity Forms
 * Works with providers such as IFTT, Basin, FormKeep, Formspree and many more.
 * Supports custom HTTP Endpoints and WebHooks
 

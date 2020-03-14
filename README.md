@@ -5,7 +5,7 @@ Replace PHP form actions with API and WebHook driven services such IFTT, Basin, 
 Major features in WP Serverless Forms include:
 
 * Works on both Serverless Static WordPress Sites and Dynamic PHP hosted sites
-* Support for Contact Form 7
+* Support for Contact Form 7, Gravity Forms
 * Works with providers such as IFTT, Basin, FormKeep, Formspree and many more.
 * Supports custom HTTP Endpoints and WebHooks
 

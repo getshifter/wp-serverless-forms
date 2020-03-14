@@ -46,6 +46,27 @@ function wpServerlessFormsRequied(form, field) {
   });
 }
 
-// Exports
+// Remove onClick functions
+function wpServerlessRemoveOnClick(form, field) {
+  jQuery(document).ready(function($) {
+    var $form = jQuery(form);
+    var $field = jQuery(field);
+
+    $form.find($field).each(function() {
+      $(this).attr("onclick", null);
+      $(this).attr("onkeypress", null);
+      console.log(this);
+    });
+  });
+}
+
+// Contact Form 7
 wpServerlessFormsClass(".wpcf7-form");
 wpServerlessFormsRequied(".wpcf7-form", ".wpcf7-validates-as-required");
+
+// Gravity Forms
+wpServerlessFormsClass(".gform_wrapper");
+wpServerlessFormsRequied(".gform_wrapper", ".gfield_contains_required .ginput_container > *");
+
+// Remove onClick
+wpServerlessRemoveOnClick(".gform_wrapper", ".gform_button");
