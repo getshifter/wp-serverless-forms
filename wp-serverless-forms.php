@@ -3,7 +3,7 @@
 Plugin Name: WP Serverless Forms
 Plugin URI: https://github.com/getshifter/wp-serverless-forms
 Description: Serverless Forms for Static WordPress sites
-Version: 1.0.0
+Version: 1.1.3
 Author: Shifter
 Author URI: https://getshifter.io
 License: GPL2
@@ -34,7 +34,6 @@ function wp_sls_forms() {
 
 function wp_sls_forms_js() {
 	$asset_dir = '/src/';
-	$asset_src_path = dirname(__FILE__) . $asset_dir;
 	$shifter_js = plugins_url( 'assets/js/main.js', __FILE__ );
 
   wp_register_script("wp-sls-forms-js", $shifter_js, array( 'jquery' ));
