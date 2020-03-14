@@ -9,7 +9,6 @@ Author URI: https://getshifter.io
 License: GPL2
 */
 
-
 /**
  * Admin Settings Menu
  */
@@ -42,7 +41,6 @@ function wp_sls_forms_js() {
 
 add_action('wp_enqueue_scripts', 'wp_sls_forms_js' );
 
-
 /**
  * WP Serverless Forms
  * Feature: HTTP Endpoint
@@ -50,10 +48,12 @@ add_action('wp_enqueue_scripts', 'wp_sls_forms_js' );
 
 require_once('lib/http-endpoint.php');
 
-
 /**
  * Providers
  */
 
 // Contact Form 7
 require_once('lib/providers/contact-form-7.php');
+
+// Gravity Forms
+require_once('lib/providers/gravity-forms.php');
