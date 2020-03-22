@@ -44,26 +44,38 @@ document.addEventListener("DOMContentLoaded", function() {
     return serialized;
   };
 
-  const allForms = document.querySelectorAll("form[data-shifter='true'], form");
+  const allForms = document.querySelectorAll("form[data-shifter='true'], .wpcf7 form, .gform_wrapper form");
   const method = "post";
   const headers = { Accept: "application/json" };
   const url = wp.wp_sls_forms_endpoint;
 
   allForms.forEach(form => {
-    // Remove Attributes
+    // Remove attributes
     form.removeAttribute("action");
     form.removeAttribute("method");
     form.removeAttribute("enctype");
     form.removeAttribute("novalidate");
+    form.setAttribute("data-wp-sls-forms", true);
+    
+    // Inputs
+    const inputs = form.querySelectorAll("input");
+    
+    // Add HTML required attribute
+    inputs.forEach(input => {
+      if(input.getAttribute("aria-required") === "true") {
+        input.required = true;
+      }
+    });
 
-    // On Submit
+    // On submit
     form.addEventListener("submit", function(el) {
       el.preventDefault();
       el.target.submit.disabled = true;
       const fields = serializeForm(el.target);
       const data = {
         id: null,
-        name: form.getAttribute("name"),
+        blogname: wp.blogname,
+        form_name: form.getAttribute("name"),
         host_name: window.location.hostname,
         pathname: window.location.pathname,
         site_id: null,
@@ -74,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
       function success(res, el) {
         el.target.submit.disabled = false;
         el.target.querySelector('input[type="submit"]').blur();
+        el.reset();
       }
 
       function error(err, el) {

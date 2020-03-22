@@ -39,6 +39,7 @@ function wp_sls_forms_js() {
 	wp_register_script("wp-sls-forms-js", $shifter_js, array( 'axios' ));
 	$translation_array = array(
 		'admin_email' => get_option('admin_email'),
+		'blogname' => get_option('blogname'),
 		'wp_sls_forms_endpoint' => get_option('wp_sls_forms_endpoint')
 	);
 	wp_localize_script( 'wp-sls-forms-js', 'wp', $translation_array );
