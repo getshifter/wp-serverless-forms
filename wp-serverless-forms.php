@@ -38,7 +38,7 @@ function wp_sls_forms_js() {
 	// Main.js
 	wp_register_script("wp-sls-forms-js", $shifter_js, array( 'axios' ));
 	$args = array(
-		'is_admin' => is_admin(),
+		'is_user_logged_in' => is_user_logged_in(),
 		'admin_email' => get_option('admin_email'),
 		'blogname' => get_option('blogname'),
 		'wp_sls_forms_endpoint' => get_option('wp_sls_forms_endpoint'),

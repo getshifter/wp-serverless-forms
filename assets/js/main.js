@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
   // Check if endpoint is set
   if (wp.wp_sls_forms_endpoint.length === 0) {
-    if (wp.is_admin === true) {
+    // Display debug message for logged in users
+    if (wp.is_user_logged_in.length !== 0) {
       console.log("WP Serverless Forms is installed but no endpoint is set.");
     }
+
     return;
   }
-
-  console.log("script works");
 
   var serializeForm = function(form) {
     // Setup our serialized data
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
   };
 
   const allForms = document.querySelectorAll(
-    "form[data-shifter='true'], .wpcf7 form, .gform_wrapper form"
+    "form[data-shifter='true'], .wpcf7 form, .gform_wrapper form, .wpforms-container form"
   );
   const method = "post";
   const headers = { Accept: "application/json" };
