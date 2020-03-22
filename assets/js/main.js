@@ -1,4 +1,14 @@
 document.addEventListener("DOMContentLoaded", function() {
+  // Check if endpoint is set
+  if (wp.wp_sls_forms_endpoint.length === 0) {
+    if (wp.is_admin === true) {
+      console.log("WP Serverless Forms is installed but no endpoint is set.");
+    }
+    return;
+  }
+
+  console.log("script works");
+
   var serializeForm = function(form) {
     // Setup our serialized data
     var serialized = [];
@@ -44,7 +54,9 @@ document.addEventListener("DOMContentLoaded", function() {
     return serialized;
   };
 
-  const allForms = document.querySelectorAll("form[data-shifter='true'], .wpcf7 form, .gform_wrapper form");
+  const allForms = document.querySelectorAll(
+    "form[data-shifter='true'], .wpcf7 form, .gform_wrapper form"
+  );
   const method = "post";
   const headers = { Accept: "application/json" };
   const url = wp.wp_sls_forms_endpoint;
@@ -56,13 +68,13 @@ document.addEventListener("DOMContentLoaded", function() {
     form.removeAttribute("enctype");
     form.removeAttribute("novalidate");
     form.setAttribute("data-wp-sls-forms", true);
-    
+
     // Inputs
     const inputs = form.querySelectorAll("input");
-    
+
     // Add HTML required attribute
     inputs.forEach(input => {
-      if(input.getAttribute("aria-required") === "true") {
+      if (input.getAttribute("aria-required") === "true") {
         input.required = true;
       }
     });
@@ -79,6 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
         host_name: window.location.hostname,
         pathname: window.location.pathname,
         site_id: null,
+        redirect: wp.wp_sls_forms_redirect,
         email: [wp.admin_email],
         fields: fields
       };
@@ -86,14 +99,19 @@ document.addEventListener("DOMContentLoaded", function() {
       function success(res, el) {
         el.target.submit.disabled = false;
         el.target.querySelector('input[type="submit"]').blur();
-        el.reset();
-        window.location.replace(wp.wp_sls_forms_redirect);
-        console.log(res)
+        el.target.reset();
+
+        // Redirect if set
+        if (wp.wp_sls_forms_redirect.length > 0) {
+          window.location.replace(wp.wp_sls_forms_redirect);
+        }
+
+        console.log(res);
       }
 
       function error(err, el) {
         el.target.querySelector('input[type="submit"]').disabled = false;
-        window.location.replace(wp.wp_sls_forms_redirect);
+        alert("Oops! There was an error.");
         console.log(err);
       }
 
@@ -109,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         .catch(function(err) {
           error(err, el);
-          console.log(error);
+          console.log(err);
         });
     });
   });
