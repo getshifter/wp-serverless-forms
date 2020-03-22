@@ -87,11 +87,14 @@ document.addEventListener("DOMContentLoaded", function() {
         el.target.submit.disabled = false;
         el.target.querySelector('input[type="submit"]').blur();
         el.reset();
+        window.location.replace(wp.wp_sls_forms_redirect);
+        console.log(res)
       }
 
       function error(err, el) {
         el.target.querySelector('input[type="submit"]').disabled = false;
-        console.log(error);
+        window.location.replace(wp.wp_sls_forms_redirect);
+        console.log(err);
       }
 
       axios({

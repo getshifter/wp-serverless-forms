@@ -37,12 +37,13 @@ function wp_sls_forms_js() {
 
 	// Main.js
 	wp_register_script("wp-sls-forms-js", $shifter_js, array( 'axios' ));
-	$translation_array = array(
+	$args = array(
 		'admin_email' => get_option('admin_email'),
 		'blogname' => get_option('blogname'),
-		'wp_sls_forms_endpoint' => get_option('wp_sls_forms_endpoint')
+		'wp_sls_forms_endpoint' => get_option('wp_sls_forms_endpoint'),
+		'wp_sls_forms_redirect' => get_option('wp_sls_forms_redirect')
 	);
-	wp_localize_script( 'wp-sls-forms-js', 'wp', $translation_array );
+	wp_localize_script( 'wp-sls-forms-js', 'wp', $args );
 	wp_enqueue_script("wp-sls-forms-js");
 	
 	// Axios
