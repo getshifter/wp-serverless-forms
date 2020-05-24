@@ -33,7 +33,8 @@ function wp_sls_forms() {
 
 function wp_sls_forms_js() {
 	$shifter_js = plugins_url( 'assets/js/main.js', __FILE__ );
-	$axios = 'https://unpkg.com/axios/dist/axios.min.js';
+	$axios = 'https://unpkg.com/axios@0.19.2/dist/axios.min.js';
+
 
 	// Main.js
 	wp_register_script("wp-sls-forms-js", $shifter_js, array( 'axios' ));
