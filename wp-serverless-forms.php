@@ -3,7 +3,7 @@
 Plugin Name: WP Serverless Forms
 Plugin URI: https://github.com/getshifter/wp-serverless-forms
 Description: Customizable form endpoints for WordPress sites.
-Version: 1.2.0
+Version: 1.3.0
 Author: Shifter
 Author URI: https://getshifter.io
 License: GPLv3
@@ -33,8 +33,6 @@ function wp_sls_forms() {
 
 function wp_sls_forms_js() {
 	$shifter_js = plugins_url( 'assets/js/main.js', __FILE__ );
-	$axios = 'https://unpkg.com/axios@0.19.2/dist/axios.min.js';
-
 
 	// Main.js
 	wp_register_script("wp-sls-forms-js", $shifter_js, array( 'axios' ));
@@ -47,10 +45,6 @@ function wp_sls_forms_js() {
 	);
 	wp_localize_script( 'wp-sls-forms-js', 'wp', $args );
 	wp_enqueue_script("wp-sls-forms-js");
-	
-	// Axios
-	wp_register_script("axios", $axios);
-  wp_enqueue_script("axios");
 }
 
 add_action('wp_enqueue_scripts', 'wp_sls_forms_js' );
