@@ -35,7 +35,7 @@ function wp_sls_forms_js() {
 	$shifter_js = plugins_url( 'assets/js/main.js', __FILE__ );
 
 	// Main.js
-	wp_register_script("wp-sls-forms-js", $shifter_js, array( 'axios' ));
+	wp_register_script("wp-sls-forms-js", $shifter_js);
 	$args = array(
 		'is_user_logged_in' => is_user_logged_in(),
 		'admin_email' => get_option('admin_email'),

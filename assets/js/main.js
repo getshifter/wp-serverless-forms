@@ -52,7 +52,7 @@ onBootstrap();
 
 document.addEventListener("DOMContentLoaded", function () {
   const allForms = document.querySelectorAll(
-    "form[data-shifter='true'], .wpcf7 form, .gform_wrapper form, .wpforms-container form"
+    "form[data-shifter='true'], .wpcf7 form, .wpcf7-form, .gform_wrapper form, .wpforms-container form"
   );
 
   allForms.forEach((form) => {
