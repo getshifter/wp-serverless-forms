@@ -32,19 +32,23 @@ function wp_sls_forms() {
  */
 
 function wp_sls_forms_js() {
-	$shifter_js = plugins_url( 'assets/js/main.js', __FILE__ );
+  $pages_csv = esc_attr(get_option('wp_sls_forms_pages'));
+  $pgs = explode(',', $pages_csv, 50);
+  
+  if (empty($pages_csv) || is_page($pgs)) {
+    $shifter_js = plugins_url( 'assets/js/main.js', __FILE__ );
 
-	// Main.js
-	wp_register_script("wp-sls-forms-js", $shifter_js);
-	$args = array(
-		'is_user_logged_in' => is_user_logged_in(),
-		'admin_email' => get_option('admin_email'),
-		'blogname' => get_option('blogname'),
-		'wp_sls_forms_endpoint' => get_option('wp_sls_forms_endpoint'),
-		'wp_sls_forms_redirect' => get_option('wp_sls_forms_redirect')
-	);
-	wp_localize_script( 'wp-sls-forms-js', 'wp', $args );
-	wp_enqueue_script("wp-sls-forms-js");
+    // Main.js
+    wp_register_script("wp-sls-forms-js", $shifter_js);
+    $args = array(
+      'is_user_logged_in' => is_user_logged_in(),
+      'blogname' => get_option('blogname'),
+      'wp_sls_forms_endpoint' => get_option('wp_sls_forms_endpoint'),
+      'wp_sls_forms_redirect' => get_option('wp_sls_forms_redirect'),
+    );
+    wp_localize_script( 'wp-sls-forms-js', 'wp', $args );
+    wp_enqueue_script("wp-sls-forms-js");
+  }
 }
 
 add_action('wp_enqueue_scripts', 'wp_sls_forms_js' );

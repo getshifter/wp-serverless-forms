@@ -21,6 +21,13 @@
             <input name="wp_sls_forms_redirect" type="text" aria-describedby="serverless-forms-redirect" value="<?php echo get_option('wp_sls_forms_redirect'); ?>" class="regular-text code">
           </td>
         </tr>
+        <tr valign="top">
+          <th scope="row">Pages</th>
+          <td>
+            <input name="wp_sls_forms_pages" type="text" aria-describedby="serverless-forms-pages" value="<?php echo get_option('wp_sls_forms_pages'); ?>" class="regular-text code" placeholder="contact,message">
+            <p>(Leave blank to add scripts to all pages)</p>
+          </td>
+        </tr>
       </table>
       <?php submit_button(); ?>
     </form>
