@@ -5,6 +5,7 @@ add_action( 'admin_init', 'register_sls_forms_ext_settings' );
 function register_sls_forms_ext_settings() {
   register_setting( 'wp-sls-forms-settings-group', 'wp_sls_forms_endpoint' );
   register_setting( 'wp-sls-forms-settings-group', 'wp_sls_forms_redirect' );
+  register_setting( 'wp-sls-forms-settings-group', 'wp_sls_forms_pages' );
 }
 
 // Create Options Page
